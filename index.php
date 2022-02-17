@@ -16,7 +16,19 @@ include __DIR__ . "/database/dischiDb.php";
 
 
 <body>
-    
+    <div class="navbar">    
+        <div class="nav">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png" alt="">
+        </div>
+        <select 
+        class="selettore">
+            <option disabled value="">Scegli il tuo genere</option>
+            <option value="">Tutti</option>
+        </select>
+        
+    </div>
+
+
     <main>
 
         <div class="container">

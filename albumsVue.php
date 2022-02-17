@@ -13,6 +13,21 @@
 
 <body>
     <div id="app">
+
+        <div class="navbar">
+             <div class="nav">
+                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png" alt="">
+            </div>
+            <select 
+            class="selettore" 
+            v-model="selected" 
+            @change="('filtra', selected)">
+                <option disabled value="">Scegli il tuo genere</option>
+                <option v-for="(genre, i) in listaFiltrata" :key="i">{{album.genre}}</option>
+                <option value="">Tutti</option>
+            </select>
+            
+        </div>
         <main>
 
             <div class="container">
@@ -37,14 +52,38 @@
         var app = new Vue({
         el: '#app',
         data: {
-            albumsList: []
+            albumsList: [],
+            albumFiltrati: [],
+            listaFiltrata: [],
+            selected: ''
         },
         mounted() {
             axios.get("http://localhost:8888/php-ajax-dischi/api/albums.php")
             .then(resp => {
                 this.albumsList = resp.data;
             })
-        }
+        },
+        methods: {
+            filterResult(key) {
+            (key);
+            this.albumFiltrati = this.albumsList.filter((album) => {
+                return album.genre.toLowerCase().includes(key.toLowerCase())
+            })
+            },
+        },
+        computed: {
+            listaGeneri() {
+            const listaFiltrata = [];
+            this.albumsList.forEach((generi) => {
+                if(!listaFiltrata.includes(generi.genre.toLowerCase())) {
+                listaFiltrata.push(generi.genre.toLowerCase())
+                }
+            })
+            return listaFiltrata;
+            }
+        },
+
+        
         })
     </script>
 </body>

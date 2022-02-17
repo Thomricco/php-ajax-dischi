@@ -62,3 +62,28 @@ main {
     height: 120px;
     margin-bottom: 10px;
 }
+
+
+.navbar {
+    display: flex;
+    background-color: black;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: black;
+}
+
+.logo {
+    width: 40px;
+}
+
+.selettore {
+    height: 30px;
+    background-color: black;
+    color: #fff;
+    
+}
