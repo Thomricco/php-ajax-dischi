@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    background-color: #1E2D3B;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.container-album {
+    width: 1000px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+
+.album-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    width: 150px;
+    text-align: center;
+    background-color: #2E3A46;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 20px;
+    
+}
+
+.text-title {
+    color: #fff;
+    font-size: 20px;
+    padding-bottom: 10px;
+    text-transform:uppercase;
+}
+
+.text-author {
+    color: gray;
+    font-size: 15px;
+}
+
+.text-years {
+    color: gray;
+    font-size: 12px;
+}
+
+.box-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
